@@ -2,6 +2,7 @@
 
 namespace DummyNamespace\Providers;
 
+use Caffeinated\Modules\Exceptions\ModuleNotFoundException;
 use Caffeinated\Modules\Support\ServiceProvider;
 
 class DummyProvider extends ServiceProvider
@@ -19,7 +20,7 @@ class DummyProvider extends ServiceProvider
         if(!$this->app->configurationIsCached()) {
             $this->loadConfigsFrom(module_path('DummySlug', 'ConfigMapping', 'DummyLocation'));
         }
-        $this->loadFactoriesFrom(module_path('DummySlug', 'DatabaseFactoriesMapping', 'DummyLocation'));
+        // $this->loadFactoriesFrom(module_path('DummySlug', 'DatabaseFactoriesMapping', 'DummyLocation'));
     }
 
     /**
